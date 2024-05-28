@@ -1,0 +1,10 @@
+<!-- res/drawable/rounded_edittext_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#EFEFEF"/> <!-- Το χρώμα του φόντου -->
+    <corners android:radius="16dp"/> <!-- Ακτίνα γωνιών -->
+    <padding
+        android:left="8dp"
+        android:top="8dp"
+        android:right="8dp"
+        android:bottom="8dp"/>
+</shape>

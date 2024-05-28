@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/profilepic1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/profilepic1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hellotext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="Hellο George!"
+        app:layout_constraintStart_toEndOf="@id/profilepic1"
+        app:layout_constraintTop_toTopOf="@id/profilepic1" />
+
+    <!-- ImageView για φίλτρα αναζήτησης -->
+    <ImageView
+        android:id="@+id/where"
+        android:layout_width="0dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="115dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:srcCompat="@drawable/wheretoplayimg" />
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        android:hint="Search for fields..."
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/where"
+        app:layout_constraintEnd_toStartOf="@+id/filterimg" />
+
+    <ImageView
+        android:id="@+id/filterimg"
+        android:layout_width="49dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="-15dp"
+        app:layout_constraintStart_toEndOf="@+id/search_field"
+        app:layout_constraintTop_toTopOf="@id/search_field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/filter" />
+
+    <ImageView
+        android:id="@+id/sports"
+        android:layout_width="115dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_field"
+        app:srcCompat="@drawable/sports" />
+
+    <ImageView
+        android:id="@+id/offersimg"
+        android:layout_width="95dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tennisimg"
+        app:srcCompat="@drawable/offers" />
+
+
+    <ImageView
+        android:id="@+id/basketimg"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sports"
+        app:layout_constraintEnd_toStartOf="@+id/footballimg"
+        app:srcCompat="@drawable/basketimg"
+        app:layout_constraintHorizontal_chainStyle="spread_inside" />
+
+    <ImageView
+        android:id="@+id/footballimg"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@id/basketimg"
+        app:layout_constraintTop_toTopOf="@id/basketimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/footballimg" />
+
+    <ImageView
+        android:id="@+id/volleyimg"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/basketimg"
+        app:layout_constraintEnd_toStartOf="@+id/tennisimg"
+        app:srcCompat="@drawable/volleyimg"
+        app:layout_constraintHorizontal_chainStyle="spread_inside" />
+
+    <ImageView
+        android:id="@+id/tennisimg"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@id/volleyimg"
+        app:layout_constraintTop_toTopOf="@id/volleyimg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/tennisimg" />
+
+
+    <!-- Guideline to dynamically control spacing between image views -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.83" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
