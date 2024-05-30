@@ -20,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the main activity
-                Intent mainIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent mainIntent = new Intent(SplashScreenActivity.this, LSActivity.class);
                 startActivity(mainIntent);
                 finish(); // Close the splash screen activity to prevent it from being shown again when pressing back
             }

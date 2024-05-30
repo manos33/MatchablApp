@@ -1,6 +1,6 @@
 <!-- res/drawable/rounded_edittext_background.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/grey"/> <!-- Το χρώμα του φόντου -->
+    <solid android:color="@color/deepgreen"/> <!-- Το χρώμα του φόντου -->
     <corners android:radius="16dp"/> <!-- Ακτίνα γωνιών -->
     <padding
         android:left="8dp"
