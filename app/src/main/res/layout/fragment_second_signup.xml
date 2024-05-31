@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/selectSportImg"
+        android:layout_width="312dp"
+        android:layout_height="178dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/select_sport_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/footballButton"
+        android:layout_width="309dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/toggle_button_background"
+        android:textOff="Football"
+        android:textOn="Football"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectSportImg" />
+
+    <ToggleButton
+        android:id="@+id/tennisButton"
+        android:layout_width="309dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/toggle_button_background"
+        android:textOff="Tennis"
+        android:textOn="Tennis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/footballButton" />
+
+    <ToggleButton
+        android:id="@+id/volleyballButton"
+        android:layout_width="309dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/toggle_button_background"
+        android:textOff="Volleyball"
+        android:textOn="Volleyball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tennisButton" />
+
+    <ToggleButton
+        android:id="@+id/basketballButton"
+        android:layout_width="309dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/toggle_button_background"
+        android:textOff="Basketball"
+        android:textOn="Basketball"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/volleyballButton" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="37dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continueButton2"
+        app:srcCompat="@drawable/dots2" />
+
+    <Button
+        android:id="@+id/continueButton2"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/signUpText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView6"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Already have an account? SIGN IN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continueButton2"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
