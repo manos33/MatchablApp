@@ -4,14 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -28,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:src="@drawable/settings"
+        android:src="@drawable/settings1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +45,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:text="Hellο George!"
+        android:fontFamily="@font/manrope_regular"
         app:layout_constraintStart_toEndOf="@id/profilepic1"
         app:layout_constraintTop_toTopOf="@id/profilepic1" />
 
@@ -59,37 +56,25 @@
         android:layout_height="107dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="115dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:srcCompat="@drawable/wheretoplayimg" />
 
-    <EditText
-        android:id="@+id/search_field"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rounded_edittext_background"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="8dp"
-        android:hint="Search for fields..."
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/where"
-        app:layout_constraintEnd_toStartOf="@+id/filterimg" />
 
-    <ImageView
-        android:id="@+id/filterimg"
-        android:layout_width="49dp"
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="316dp"
         android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="-15dp"
-        app:layout_constraintStart_toEndOf="@+id/search_field"
-        app:layout_constraintTop_toTopOf="@id/search_field"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/rounded_button_background"
+        android:text="Search"
+        android:fontFamily="@font/manrope_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/filter" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/where" />
 
     <ImageView
         android:id="@+id/sports"
@@ -98,7 +83,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_field"
+        app:layout_constraintTop_toBottomOf="@id/searchButton"
         app:srcCompat="@drawable/sports" />
 
     <ImageView
@@ -158,6 +143,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/tennisimg" />
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Guideline to dynamically control spacing between image views -->
     <androidx.constraintlayout.widget.Guideline
@@ -166,5 +157,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.83" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

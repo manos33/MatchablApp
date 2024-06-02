@@ -1,0 +1,112 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="30dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date"
+            android:fontFamily="@font/manrope_regular"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Start Time"
+            android:layout_marginTop="16dp"
+            android:textSize="20dp"
+            android:fontFamily="@font/manrope_bold"
+            />
+
+        <TimePicker
+            android:id="@+id/startTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select End Time"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/manrope_bold"
+            />
+
+        <TimePicker
+            android:id="@+id/endTimePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Sport"
+            android:fontFamily="@font/manrope_bold"
+            android:textSize="20dp"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/sportRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioFootball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Football"
+                android:fontFamily="@font/manrope_regular"
+
+                android:textSize="18dp"
+                android:buttonTint="@color/matchablgreen" />
+
+            <RadioButton
+                android:id="@+id/radioBasketball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Basketball"
+                android:textSize="18dp"
+                android:fontFamily="@font/manrope_regular"
+                android:buttonTint="@color/matchablgreen" />
+
+            <RadioButton
+                android:id="@+id/radioTennis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tennis"
+                android:textSize="18dp"
+                android:fontFamily="@font/manrope_regular"
+                android:buttonTint="@color/matchablgreen" />
+
+            <RadioButton
+                android:id="@+id/radioVolleyball"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volleyball"
+                android:textSize="18dp"
+                android:fontFamily="@font/manrope_regular"
+                android:buttonTint="@color/matchablgreen" />
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_search_button"
+            android:layout_width="218dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:text="Search"
+            android:fontFamily="@font/manrope_regular"
+            />
+    </LinearLayout>
+</ScrollView>

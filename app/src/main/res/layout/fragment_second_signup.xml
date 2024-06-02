@@ -68,51 +68,50 @@
         app:layout_constraintTop_toBottomOf="@id/volleyballButton" />
 
 
-
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="37dp"
         android:layout_height="12dp"
         android:layout_marginTop="8dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/continueButton2"
         app:srcCompat="@drawable/dots2" />
 
+
     <Button
         android:id="@+id/continueButton2"
-        android:layout_width="0dp"
+        android:layout_width="379dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/rounded_button_background"
         android:text="Continue"
         android:textAllCaps="false"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@id/signUpText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView6"
-        />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/basketballButton" />
 
     <TextView
-        android:id="@+id/signUpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/txtWrong"
+        android:layout_width="214dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="87dp"
+        android:text=""
+        android:textColor="#FF0000"
+        android:textSize="20dp"
+        android:textAlignment="center"
+
+        android:layout_marginEnd="87dp"
         android:layout_marginBottom="16dp"
-        android:text="Already have an account? SIGN IN"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintBottom_toTopOf="@+id/continueButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/continueButton2"
-        app:layout_constraintVertical_bias="1.0" />
-
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

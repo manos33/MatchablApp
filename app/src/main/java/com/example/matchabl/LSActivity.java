@@ -34,7 +34,7 @@ public class LSActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate to sign-up activity
-                Intent signUpIntent = new Intent(LSActivity.this, SignupActivity.class);
+                Intent signUpIntent = new Intent(LSActivity.this, FirstSignUpActivity.class);
                 startActivity(signUpIntent);
             }
         });
