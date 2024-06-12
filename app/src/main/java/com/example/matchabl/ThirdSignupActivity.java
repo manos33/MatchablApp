@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ThirdSignupActivity extends AppCompatActivity {
 
-    private ImageView profileSetupImg, dotsImg;
+    private ImageView profileSetupImg;
     private RatingBar footballRatingBar, tennisRatingBar, basketRatingBar, volleyRatingBar;
     private Button finishButton;
 
@@ -24,31 +24,30 @@ public class ThirdSignupActivity extends AppCompatActivity {
         tennisRatingBar = findViewById(R.id.tennisRatingBar);
         basketRatingBar = findViewById(R.id.basketRatingBar);
         volleyRatingBar = findViewById(R.id.volleyRatingBar);
-        dotsImg = findViewById(R.id.dotsImg);
+
         finishButton = findViewById(R.id.finishButton);
 
-        // Set click listener for finish button
+
         finishButton.setOnClickListener(v -> {
             int footballRating = (int)footballRatingBar.getRating();
             int tennisRating = (int)tennisRatingBar.getRating();
             int basketRating = (int)basketRatingBar.getRating();
             int volleyRating = (int)volleyRatingBar.getRating();
 
-            // Save the ratings (this is just an example, replace it with actual saving logic)
+
             saveUserRatings(footballRating, tennisRating, basketRating, volleyRating);
 
-            // Show a toast message (replace with your desired action)
-            // Toast.makeText(this, "Ratings saved", Toast.LENGTH_SHORT).show();
 
-            // Navigate to the next activity or perform any other action
+
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
     }
 
-    // Method to save user ratings (replace with actual saving logic)
+    // Method to save user ratings
     private void saveUserRatings(int footballRating, int tennisRating, int basketRating, int volleyRating) {
-        // Example: save to shared preferences or a database
+        // Wanted to save it in the database
         // SharedPreferences sharedPreferences = getSharedPreferences("user_ratings", Context.MODE_PRIVATE);
         // SharedPreferences.Editor editor = sharedPreferences.edit();
         // editor.putInt("football_rating", footballRating);

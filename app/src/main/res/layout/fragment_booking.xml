@@ -15,13 +15,36 @@
         android:id="@+id/select_time_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select an available time slot"
-        android:textSize="16sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Select available time slots"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
-    <LinearLayout
-        android:id="@+id/time_slots_container"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/time_slots_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            />
+
+
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/book_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"/>
+        android:text="Book Selected Slots"
+        android:fontFamily="@font/manrope_regular"
+        android:background="@drawable/rounded_button_background"
+        android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -1,6 +1,5 @@
 package com.example.matchabl;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
@@ -37,11 +37,15 @@ public class SportSelectionDialogFragment extends DialogFragment {
         confirmButton = view.findViewById(R.id.confirm_button);
 
         ArrayList<String> sportTypes = new ArrayList<>();
+        final ArrayList<Integer> sportIds = new ArrayList<>(); // Add sportIds list
         for (int i = 0; i < facilitySports.length(); i++) {
             try {
                 JSONObject sport = facilitySports.getJSONObject(i);
-                String sportType = sport.getString("SportName") + " (" + sport.getString("SportType") + ")";
-                sportTypes.add(sportType);
+                String sportType = sport.getString("SportType");
+                String sportName = sport.getString("SportName");
+                int sportId = sport.getInt("SportID");
+                sportTypes.add(sportName + " (" + sportType + ")");
+                sportIds.add(sportId);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -54,8 +58,12 @@ public class SportSelectionDialogFragment extends DialogFragment {
         confirmButton.setOnClickListener(v -> {
             int selectedPosition = sportListView.getCheckedItemPosition();
             if (selectedPosition != ListView.INVALID_POSITION) {
-                String selectedSportType = sportTypes.get(selectedPosition);
-                ((FieldProfileFragment) getTargetFragment()).onSportTypeSelected(selectedSportType);
+                String selectedSport = sportTypes.get(selectedPosition);
+                int sportId = sportIds.get(selectedPosition);
+                String[] sportParts = selectedSport.split(" \\(");
+                String sportName = sportParts[0];
+                String sportType = sportParts[1].replace(")", "");
+                ((FieldProfileFragment) getTargetFragment()).onSportTypeSelected(sportType, sportName, sportId);
                 dismiss();
             }
         });

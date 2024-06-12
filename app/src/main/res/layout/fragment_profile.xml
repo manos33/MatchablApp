@@ -10,13 +10,13 @@
         android:id="@+id/imageView12"
         android:layout_width="match_parent"
         android:layout_height="317dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintBottom_toBottomOf="@+id/fullnametext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile_top_background" />
 
-    <ImageView
+    <com.example.matchabl.CircularImageView
         android:id="@+id/imageView5"
         android:layout_width="135dp"
         android:layout_height="125dp"
@@ -30,10 +30,11 @@
         app:srcCompat="@drawable/profilepic" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/fullnametext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/manrope_extrabold"
         android:text="George Koumoundouros"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -42,39 +43,49 @@
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <ImageView
-        android:id="@+id/profsettings"
-        android:layout_width="36dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settings" />
 
-
-
-    <ImageView
+    <TextView
         android:id="@+id/imageView13"
-        android:layout_width="128dp"
-        android:layout_height="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="267dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Sports"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/sports" />
+        app:layout_constraintTop_toBottomOf="@+id/fullnametext" />
 
     <LinearLayout
         android:id="@+id/sports_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
         android:layout_marginStart="16dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        android:padding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <TextView
+        android:id="@+id/usernametext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Username"
+        android:fontFamily="@font/manrope_bold"
+        android:textColor="@color/black"
+
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

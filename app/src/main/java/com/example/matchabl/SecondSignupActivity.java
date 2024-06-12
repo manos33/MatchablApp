@@ -36,18 +36,17 @@ public class SecondSignupActivity extends AppCompatActivity {
         volleyballButton = findViewById(R.id.volleyballButton);
         basketballButton = findViewById(R.id.basketballButton);
         continueButton = findViewById(R.id.continueButton2);
-        //signUpText = findViewById(R.id.signUpText);
         txtWrong = findViewById(R.id.txtWrong);
 
 
 
-        // Set up toggle buttons with rounded corners and custom colors
+
         setupToggleButton(footballButton, Color.parseColor("#C5F0A4"), Color.parseColor("#F4F4F4"));
         setupToggleButton(tennisButton, Color.parseColor("#C5F0A4"), Color.parseColor("#F4F4F4"));
         setupToggleButton(volleyballButton, Color.parseColor("#C5F0A4"), Color.parseColor("#F4F4F4"));
         setupToggleButton(basketballButton, Color.parseColor("#C5F0A4"), Color.parseColor("#F4F4F4"));
 
-        // Handle continue button click
+
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +86,6 @@ public class SecondSignupActivity extends AppCompatActivity {
         NetworkHandler.sendSportsPreferences(this, sportsSet, new NetworkHandler.SignUpCallback() {
             @Override
             public void onSuccess() {
-                // Navigate to the next activity on success
                 Intent intent = new Intent(SecondSignupActivity.this, ThirdSignupActivity.class);
                 startActivity(intent);
                 // Re-enable the continue button
@@ -96,7 +94,6 @@ public class SecondSignupActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(String errorMessage) {
-                // Show error message on failure
                 txtWrong.setText(errorMessage);
                 txtWrong.setTextColor(Color.RED);
                 // Re-enable the continue button
@@ -105,8 +102,7 @@ public class SecondSignupActivity extends AppCompatActivity {
 
             @Override
             public void onError(String errorMessage) {
-                // Show error message on error
-                txtWrong.setText("An error occurred: " + errorMessage);
+                txtWrong.setText(/*"An error occurred: " + errorMessage*/"No connection with the server.");
                 txtWrong.setTextColor(Color.RED);
                 // Re-enable the continue button
                 continueButton.setEnabled(true);

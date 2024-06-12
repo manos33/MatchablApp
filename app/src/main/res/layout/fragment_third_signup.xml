@@ -118,20 +118,14 @@
             android:secondaryProgressTint="@color/matchablgreen"
             android:stepSize="1" />
 
-        <ImageView
-            android:id="@+id/dotsImg"
-            android:layout_width="37dp"
-            android:layout_height="12dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="72dp"
-            android:src="@drawable/dots3" />
+
 
         <Button
             android:id="@+id/finishButton"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="70dp"
             android:background="@drawable/rounded_button_background"
             android:text="Finish"
             android:textAllCaps="false"

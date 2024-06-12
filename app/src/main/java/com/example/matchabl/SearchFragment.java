@@ -4,35 +4,32 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Switch;
+import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-
-
-// SearchFragment.java
 public class SearchFragment extends Fragment {
 
-    private Switch viewSwitch;
+    private RadioGroup toggleSwitch;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-        viewSwitch = view.findViewById(R.id.viewSwitch);
+        toggleSwitch = view.findViewById(R.id.toggleSwitch);
 
         // Set initial fragment
-        if (viewSwitch.isChecked()) {
+        if (toggleSwitch.getCheckedRadioButtonId() == R.id.radio_map) {
             showMapFragment();
         } else {
             showListFragment();
         }
 
-        viewSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
+        toggleSwitch.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radio_map) {
                 showMapFragment();
             } else {
                 showListFragment();

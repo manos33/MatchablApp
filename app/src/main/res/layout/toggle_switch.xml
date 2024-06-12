@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/toggle_background_no_corners"
+    android:padding="4dp"
+    android:layout_gravity="center_horizontal">
+
+    <RadioGroup
+        android:id="@+id/toggleSwitch"
+        android:layout_height="45dp"
+        android:layout_width="250dp"
+
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@drawable/toggle_background_no_corners">
+
+    <RadioButton
+        android:id="@+id/radio_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:background="@drawable/toggle_selector"
+        android:padding="12dp"
+        android:text="List"
+        android:textColor="@drawable/toggle_text_selector"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+    <RadioButton
+        android:id="@+id/radio_map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:button="@null"
+        android:background="@drawable/toggle_selector"
+        android:padding="12dp"
+        android:text="Map"
+        android:textColor="@drawable/toggle_text_selector"
+        android:gravity="center"
+        android:textSize="16sp" />
+</RadioGroup>
+    </LinearLayout>

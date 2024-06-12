@@ -60,7 +60,7 @@ public class FirstSignUpActivity extends AppCompatActivity {
             public void updateDrawState(@NonNull android.text.TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setUnderlineText(false); // Remove underline
-                ds.setColor(Color.parseColor("#a9e978")); // Ensure color is set
+                ds.setColor(Color.parseColor("#a9e978"));
             }
         };
         spannableString.setSpan(clickableSpan, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -108,7 +108,7 @@ public class FirstSignUpActivity extends AppCompatActivity {
 
                         @Override
                         public void onError(String errorMessage) {
-                            txtError.setText("An error occurred: " + errorMessage);
+                            txtError.setText(/*"An error occurred: " + errorMessage*/"No connection with server.");
                             txtError.setTextColor(Color.RED);
                             signUpButton.setEnabled(true);
                         }

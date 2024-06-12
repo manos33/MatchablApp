@@ -2,9 +2,12 @@ package com.example.matchabl;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.view.View;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +21,11 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_screen); // Replace with the layout file for your splash screen
+        setContentView(R.layout.splash_screen);
+
+
+
+// Code to test that if nothing was saved in the preferences the code would work correctly
 
 //        SharedPreferences preferences = getSharedPreferences("MyPrefsFile", MODE_PRIVATE);
 //        SharedPreferences.Editor editor = preferences.edit();
@@ -29,8 +36,25 @@ public class SplashScreenActivity extends AppCompatActivity {
 //        SharedPreferences.Editor editor1 = apreferences.edit(); // Χρησιμοποιήστε το "apreferences"
 //        editor1.clear(); // Χρησιμοποιήστε το "editor1"
 //        editor1.apply(); // Χρησιμοποιήστε το "editor1.apply()"
+//
+//        SharedPreferences bpreferences = getSharedPreferences("sports", MODE_PRIVATE);
+//        SharedPreferences.Editor editor2 = apreferences.edit(); // Χρησιμοποιήστε το "apreferences"
+//        editor2.clear(); // Χρησιμοποιήστε το "editor1"
+//        editor2.apply(); // Χρησιμοποιήστε το "editor1.apply()"
 
 
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setNavigationBarColor(getResources().getColor(R.color.matchablgreen)); // Use your desired color
+        }
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
 
         // Delay for a few seconds and then check the Authorization token
         new Handler().postDelayed(() -> {
@@ -44,11 +68,11 @@ public class SplashScreenActivity extends AppCompatActivity {
                 Intent loginIntent = new Intent(SplashScreenActivity.this, LSActivity.class);
                 startActivity(loginIntent);
             }
-            finish(); // Close the splash screen activity to prevent it from being shown again when pressing back
+            finish();
         }, SPLASH_SCREEN_DELAY);
     }
 
-    // Method to check if the Authorization token is valid
+    // Method to check if the Authorization token is valid - wanted to execute this check with the server
     private boolean isAuthTokenValid() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         String authToken = sharedPreferences.getString(AUTH_KEY, null);

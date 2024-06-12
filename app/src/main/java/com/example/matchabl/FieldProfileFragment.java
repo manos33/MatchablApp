@@ -1,5 +1,6 @@
 package com.example.matchabl;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class FieldProfileFragment extends Fragment {
 
     private static final String TAG = "FieldProfileFragment";
 
-    // Προκαθορισμένη σειρά ημερών της εβδομάδας
+    // correct order
     private static final Map<String, Integer> dayOrder;
     static {
         dayOrder = new HashMap<>();
@@ -46,6 +47,14 @@ public class FieldProfileFragment extends Fragment {
         dayOrder.put("Fri", 5);
         dayOrder.put("Sat", 6);
         dayOrder.put("Sun", 7);
+    }
+
+    public static FieldProfileFragment newInstance(String fieldId) {
+        FieldProfileFragment fragment = new FieldProfileFragment();
+        Bundle args = new Bundle();
+        args.putString("fieldId", fieldId);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Nullable
@@ -80,7 +89,7 @@ public class FieldProfileFragment extends Fragment {
         NetworkHandler networkHandler = new NetworkHandler();
         networkHandler.getFieldDetails(getContext(), fieldId, new NetworkHandler.FieldDetailsCallback() {
             @Override
-            public void onSuccess(JSONObject fieldDetails) {
+            public void onSuccess(JSONObject fieldDetails, JSONArray facilitySports) {
                 getActivity().runOnUiThread(() -> {
                     Log.d(TAG, "Field details loaded successfully: " + fieldDetails.toString());
                     try {
@@ -93,19 +102,23 @@ public class FieldProfileFragment extends Fragment {
                         fieldAddressTextView.setText(info.getString("Address"));
 
                         // Facility sports
-                        facilitySports = facility.getJSONArray("facility_sports");
+                        FieldProfileFragment.this.facilitySports = facilitySports;
                         sportsContainer.removeAllViews();
                         for (int i = 0; i < facilitySports.length(); i++) {
                             JSONObject sport = facilitySports.getJSONObject(i);
                             TextView sportTextView = new TextView(getContext());
                             sportTextView.setText(sport.getString("SportName") + " (" + sport.getString("SportType") + ") - $" + sport.getInt("price"));
+                            sportTextView.setTextSize(20);
+                            sportTextView.setTextColor(Color.BLACK);
+                            sportTextView.setTag(sport.getInt("SportID")); // Save SportID as tag
+
                             sportsContainer.addView(sportTextView);
                         }
 
                         // Facility hours
                         JSONArray facilityHours = facility.getJSONArray("facility_hours");
 
-                        // Ταξινόμηση των ωραρίων σύμφωνα με την προκαθορισμένη σειρά
+
                         List<JSONObject> hoursList = new ArrayList<>();
                         for (int i = 0; i < facilityHours.length(); i++) {
                             hoursList.add(facilityHours.getJSONObject(i));
@@ -157,10 +170,13 @@ public class FieldProfileFragment extends Fragment {
         sportSelectionDialog.show(getParentFragmentManager(), "SportSelectionDialogFragment");
     }
 
-    public void onSportTypeSelected(String sportType) {
+    public void onSportTypeSelected(String sportType, String sportName, int sportId) {
         BookingFragment bookingFragment = new BookingFragment();
         Bundle args = new Bundle();
         args.putString("sportType", sportType);
+        args.putString("sportName", sportName);
+        args.putInt("sportId", sportId); // Pass SportID to BookingFragment
+        args.putString("facilityId", getArguments().getString("fieldId"));
         bookingFragment.setArguments(args);
         getParentFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, bookingFragment)

@@ -19,7 +19,6 @@ public class SignupActivity extends AppCompatActivity {
     private Button continueButton;
     private TextView txtWrong;
 
-    // Έλεγχος κατάστασης στο επόμενο Activity πριν από τη μετάβαση πίσω
 
 
     @Override
@@ -36,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         continueButton = findViewById(R.id.continueButton);
         txtWrong = findViewById(R.id.txtwrong);
 
-        // Set click listener for continue button to go to the next step of sign up
+
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +57,7 @@ public class SignupActivity extends AppCompatActivity {
                     continueButton.setEnabled(false);
 
                     int age = Integer.parseInt(ageStr);
-                    txtWrong.setText(""); // Clear the error message
+                    txtWrong.setText("");
 
                     Context context = SignupActivity.this;
                     NetworkHandler.createProfile(context, name, surname, email, phone, age, new NetworkHandler.SignUpCallback() {
@@ -82,7 +81,7 @@ public class SignupActivity extends AppCompatActivity {
 
                         @Override
                         public void onError(String errorMessage) {
-                            txtWrong.setText("An error occurred: " + errorMessage);
+                            txtWrong.setText(/*"An error occurred: " + errorMessage*/"No connection with the server.");
                             txtWrong.setTextColor(Color.RED);
                             // Re-enable the continue button
                             continueButton.setEnabled(true);
@@ -96,7 +95,6 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        // Εάν η κατάσταση εγγραφής είναι true, αποτρέψτε τη μετάβαση πίσω
         if (isRegistrationInProgress()) {
             Toast.makeText(this, "Registration in progress. Please complete the process.", Toast.LENGTH_SHORT).show();
         } else {

@@ -9,13 +9,14 @@
         android:id="@+id/sport_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="singleChoice"
-        android:listSelector="@android:color/darker_gray"/>
+        android:layout_weight="1"
+        android:choiceMode="singleChoice" />
 
     <Button
         android:id="@+id/confirm_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm"
-        android:layout_marginTop="16dp"/>
+        android:background="@color/matchablgreen"
+        android:textColor="@color/white" />
 </LinearLayout>

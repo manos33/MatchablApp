@@ -1,4 +1,4 @@
-<!-- res/layout/item_field.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -11,14 +11,31 @@
     android:layout_marginRight="36dp"
     >
 
-    <TextView
-        android:id="@+id/field_name"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ialisos Best Sports club"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/field_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ialisos Best Sports club"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/favorite_icon"
+            android:layout_width="31dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/add_to_favorites"
+            android:src="@drawable/ic_star_outline" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/field_address"
